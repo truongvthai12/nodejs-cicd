@@ -28,5 +28,7 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - name: Get Env Variables
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
         run: |
-          echo "### Token renewal success! :sparkles: ${secrets.APP_ID}"
+          echo "### Token renewal success! :sparkles: $APP_ID"
