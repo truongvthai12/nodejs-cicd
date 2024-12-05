@@ -42,7 +42,7 @@ jobs:
         env:
           APP_ID: ${{ vars.APP_ID }}
         run: |
-          echo "### Token renewal success! :sparkles: $APP_ID"
+          echo "### Token renewal success! :sparkles:  ${{ env.action_state }}"
   alo:
     runs-on: ubuntu-latest
     steps:
