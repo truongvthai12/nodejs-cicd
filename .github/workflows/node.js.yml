@@ -8,8 +8,9 @@ on:
   #   branches: ["main"]
   # pull_request:
   #   branches: ["main"]
-  schedule:
-    - cron: "*/5 * * * *"
+  # schedule:
+  #   - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 jobs:
   build:
@@ -42,3 +43,16 @@ jobs:
           APP_ID: ${{ vars.APP_ID }}
         run: |
           echo "### Token renewal success! :sparkles: $APP_ID"
+  alo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: "npm"
+      - name: Use the value
+        id: step_two
+        run: |
+          printf '%s\n' "$action_state"
