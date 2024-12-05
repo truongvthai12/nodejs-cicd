@@ -43,8 +43,10 @@ jobs:
       - name: Get Env Variables
         env:
           APP_ID: ${{ env.APP_ID }}
+          TEST_ENV_THOI: "anv"
         run: |
           echo "### Token renewal success! :sparkles:  ${{ env.action_state }}"
+          echo "### Token renewal success! :sparkles:  ${{ env.TEST_ENV_THOI }}"
   alo:
     runs-on: ubuntu-latest
     steps:
